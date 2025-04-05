@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: clamp(24px, 5vw, 36px);
+      margin-bottom: 20px;
+      color: white;
+      padding: 20px 18px;
+      border-radius: 10px;
+      background-color: #0056b3;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: clamp(16px, 4vw, 20px);
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    h3 {
+      margin-top: 30px;
+      font-size: clamp(18px, 4vw, 24px);
+      color: #333;
+      max-width: 90%;
+      word-wrap: break-word;
+    }
+    
+    </style>
+</head>
+<body>
+    <h1>Let's Decide Who Will Pay! 💰</h1>
+
+    <button onclick="showRandomPayer()">Who bill Pay?</button>
+    <h3 id="demo"></h3>
+    <Script>
+        const namesList = ['Shahrukh' , 'Mohsin' , 'Imran' , 'Shahid' , 'Imranbhai']
+        function whosPaying(names){
+          let  randomOfPeople = names.length;
+          let randomPersonPosition = Math.floor(Math.random()*randomOfPeople)
+          let randomPerson = names[randomPersonPosition]
+          return `congrats!🎉 "${randomPerson}" is going to Pay Party bill today`;
+        }
+
+        function showRandomPayer(){
+
+            let result = whosPaying(namesList)
+
+            document.getElementById('demo').innerHTML = result;
+            document.getElementById('demo').style.backgroundColor = "lightgreen";
+            document.getElementById('demo').style.color = "green";
+            document.getElementById('demo').style.borderRadius ="10px"
+            document.getElementById('demo').style.padding = "20px 25px"
+
+        }
+       
+
+    </Script>
+</body>
+</html>
